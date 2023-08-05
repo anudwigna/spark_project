@@ -1,6 +1,6 @@
 ## SPARK PROJECT
 
-Submission By: Abhinandan Aryal & Kassem Bou Zeid
+**Submission By: Abhinandan Aryal & Kassem Bou Zeid**
 
 The assignment was to perform several analysis on NYC Taxi dataset using spark. For this purpose, GCP was used and a cluster was made to run the analysis.
 

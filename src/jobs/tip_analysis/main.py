@@ -14,12 +14,6 @@ def analyze(spark, format="parquet", gcs_input_path=None, gcs_output_path=None):
  .mode("overwrite") \
  .option("header", "true") \
  .save(f"{gcs_output_path}/2_location_tip_analysis")
- 
-#  # Correlation between distance and tip
-#  df_distance_tip = df.stat.corr("trip_distance", "tip_amount")
- 
-#  with open(f"{gcs_output_path}/distance_tip_correlation.txt", "w") as file:
-#     file.write(f"Correlation between distance and tip: {df_distance_tip}")
 
  # Tips by time (hour of day)
  df_hour_tip = df.groupBy(hour("tpep_pickup_datetime").alias("hour")).agg(avg("tip_percentage").alias("average_tip_percentage")).orderBy("hour")
